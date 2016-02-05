@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <!-- endbower -->
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/geolocation.js"></script>
+
+    <link rel="stylesheet" href="css/geolocation.css">
+
+  </head>
+  <body class="container">
+
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="../bootstrap/img/show_maps.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>GeoLocation Test</h1>
+              <p class="lead">Find yourself and any website location on a map</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="mainContent"> </section>
+
+    <script type="text/x-handlebars" id="index">
+        <section id="geoLocationContainer" class="">
+
+        </section>
+
+        <input id="url_input" class="form-control" type="text"></input>
+        <button id="btnInsertUrl" class="btn btn-success">Find Site</button>
+
+        <menu>
+          <button id="btnMyLocation" class="btn btn-success">Find Me</button>
+          <button id="btnResetLocation" class="btn btn-warning">Reset location</button>
+        </menu>
+
+        <div id="maps">
+          <div id="my_map" class="map"></div>
+          <div id="site_map" class="map"></div>
+        </div>
+
+    </script>
+
+    <script type="text/x-handlebars" id="locationInfo">
+      <h4>Estimated location</h4>
+
+      <table align="center" class="empty">
+        <tbody>
+          <tr>
+            <td class="field_name">IP:</td>
+            <td id="location_query" class="location_value">
+              <small>{{query}}</small>
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+          <tr>
+            <td class="field_name">Country:</td>
+            <td id="location_country" class="location_value">
+              <small>{{country}}</small>
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+          <tr>
+            <td class="field_name">Region:</td>
+            <td id="location_regionName" class="location_value">
+              <small>{{regionName}}</small>
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+          <tr>
+            <td class="field_name">City:</td>
+            <td id="location_city" class="location_value">
+              <small>{{city}}</small>{{city}}
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+          <tr>
+            <td class="field_name">Time Zone:</td>
+            <td id="location_timezone" class="location_value">
+              <small>{{timezone}}</small>
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+          <tr>
+            <td class="field_name">Latitude:</td>
+            <td id="location_lat" class="location_value">
+              <small>{{lat}}</small>
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+          <tr>
+            <td class="field_name">Longitude:</td>
+            <td id="location_lon" class="location_value">
+              <small>{{lon}}</small>
+            </td>
+            <td><button class="btn btn-info">?</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<section id="mainContent"> </section>
+
+<script type="text/x-handlebars" id="index">
+    <section id="geoLocationContainer"></section>
+
+    <input id="url_input" type="text"></input>
+    <button id="btnInsertUrl" onclick="geolocation.getSiteLocation(document.getElementById('url_input').value)">Find site</button>
+
+    <button id="btnMyLocation">Find Me</button>
+    <button id="btnResetLocation">Reset location</button>
+</script>
+
+<script type="text/x-handlebars" id="locationInfo">
+  <span id="location_query">{{query}}</span>
+  <span id="location_country">{{country}}</span>
+  <span id="location_regionName">{{regionName}}</span>
+  <span id="location_city">{{city}}</span>
+  <span id="location_timezone">{{timezone}}</span>
+  <span id="location_lat">{{lat}}</span>
+  <span id="location_lon">{{lon}}</span>
+</script>
